@@ -29,14 +29,14 @@ function drawByHex() {
   fetch(hexUrl)
       .then(res => res.json())
       .then(data => {
-        //console.log(data);
+        
 
         for (let i = 0; i < data.length; i++) {
           let arr = data[i];
-          //console.log(arr);
+     
 
           for (let j = 0; j < arr.length; j++) {
-            //console.log(arr[j]);
+            
             arr[j] = '#' + arr[j];
 
           }
@@ -45,8 +45,7 @@ function drawByHex() {
         }
 
         hexArray = data.slice();
-        //console.log(data);
-        //console.log(hexArray);
+      
 
         let width = hexArray[0].length; // Get the width of the array
         let height = hexArray.length; //get height of the array
@@ -68,34 +67,20 @@ function drawByHex() {
     fetch(rgbaUrl)
         .then(res => res.json())
         .then(data => {
-          //console.log(data);
-  
-          // for (let i = 0; i < data.length; i++) {
-          //   let arr = data[i];
-          //   //console.log(arr);
-  
-          //   for (let j = 0; j < arr.length; j++) {
-          //     //console.log(arr[j]);
-          //     arr[j] = '#' + arr[j];
-  
-          //   }
-  
-  
-          // }
+        
   
           rgbaArray = data.slice();
-          //console.log(data);
-          //console.log(hexArray);
+    
   
           let width = rgbaArray[0].length; // Get the width of the array
-          //console.log(width);
+         
           let height = rgbaArray.length; //get height of the array
-          //console.log(height);
+          
           let scale = canvas.width / width;
   
           for(let row = 0; row < height; row++) {
             for(let col = 0; col < width; col++) { // Since there are nested arrays we need two for loops
-                //console.log(rgbaArray[row][col]);
+    
                 rgbaArray[row][col].pop();
                 let str = rgbaArray[row][col].join(",");
                 console.log(str);
@@ -106,18 +91,6 @@ function drawByHex() {
   
       })
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
